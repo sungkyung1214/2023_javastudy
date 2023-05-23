@@ -86,7 +86,7 @@ public class HwGrade extends JFrame implements ActionListener, ItemListener {
 	public void actionPerformed(ActionEvent e) {
 		JButton obj = (JButton) e.getSource();
 		if (obj == jb1) {
-
+			cal();
 		} else if (obj == jb2) {
 			System.exit(0);
 		} else if (obj == jb3) {
@@ -107,19 +107,23 @@ public class HwGrade extends JFrame implements ActionListener, ItemListener {
 		
 		int sum = ko + eg + ma;
 		double avg = (int)(sum/3.0*10)/10.0;
-		char grade;
+		String grade ="";
 		if(avg>=90) {
-			grade ='A';
+			grade ="A학점";
 		}else if(avg>=80) {
-			grade ='B';
+			grade ="B학점";
 		}else if(avg>=70) {
-			grade ='C';
+			grade ="C학점";
 		}else if(avg>60){
-			grade ='D';
+			grade ="D학점";
 		}else {
-			
+			grade ="E학점";
 		}
 		
+		jta.append("이름 : " + k + "\n");
+		jta.append("총점 : " + sum + "\n");
+		jta.append("평균 : " + avg + "\n");
+		jta.append("학점 : " + grade + "\n");
 		
 	}
 	
